@@ -1,0 +1,148 @@
+nav {
+    background-color: #245780;
+    color: darkred;
+    height: 2em;
+    width: 100%;
+    border-bottom: solid 2px silver;
+    position: fixed;
+    text-align: center;
+    padding: 1em;
+    font-family: "Lucida Grande", Verdana, Arial, sans-serif;
+    font-size: 26px;
+}
+
+nav .login {
+
+}
+
+nav .logout {
+
+}
+
+nav .loggedin {
+
+}
+
+
+#inventorycontrols {
+    display: none;
+    position: fixed;
+    height: 300px;
+    width: 300px;
+    background-color: azure;
+    top:130px;
+    right: 0;
+}
+
+#addProduct {
+    display: none;
+}
+
+
+
+#productSelection {
+    top: 130px;
+    position: absolute;
+
+    bottom: 0;
+
+    width: 690px;
+    min-width: 330px;
+
+
+}
+
+.productcontainer {
+    /*how do i prevent opacity from being inheirted?*/
+
+    display: block;
+    position: relative;
+    height: 300px;
+    width: 300px;
+    background-color: azure;
+    opacity: .75;
+    border: solid silver 4px;
+
+    padding: 2em;
+    margin: 4em;
+    box-shadow: 0 0 9px 5px rgba(0, 0, 0, 0.2);
+}
+
+.productcontainer .button {
+    display: block;
+    position: absolute;
+    right: 2em;
+    bottom: 2em;
+    opacity: 1;
+}
+
+.titleBanner {
+    background-color: aliceblue;
+}
+
+
+
+.is_new {
+    position: absolute;
+    opacity: .75;
+
+    display: block;
+    top: 0;
+    right: 0;
+    height: 1em;
+    width: 40px;
+    background-color: orangered;
+
+    color: teal;
+    padding: .5em;
+    text-align: center;
+
+
+}
+
+.sold {
+    position: absolute;
+    display: block;
+    height: 40px;
+    width:100%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
+
+/* Overlay product detail */
+
+#overlay {
+    display: none;
+    position: absolute;
+
+    background-color: black;
+    opacity: .9;
+    height: 100%;
+    width: 100%;
+
+
+}
+
+#overlay img {
+    margin-top: 10%;
+}
+
+#overlay p {
+    color: white;
+}
+
+#details {
+    position: fixed;
+    display: block;
+    top: 35%;
+    transform: translateX(60%) translateY(-50%);
+
+    background-color: blanchedalmond;
+    border-radius: 28px;
+    border: solid gray 2px;
+    width: 250px;
+    height: 400px;
+}
+
