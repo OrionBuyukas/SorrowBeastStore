@@ -1,15 +1,31 @@
+* {
+    font-family: "Lucida Grande", Verdana, Arial, sans-serif;
+}
+
+
 nav {
     background-color: #245780;
     color: darkred;
-    height: 2em;
+    height: 5%;
     width: 100%;
     border-bottom: solid 2px silver;
     position: fixed;
+    top: 0;
     text-align: center;
     padding: 1em;
     font-family: "Lucida Grande", Verdana, Arial, sans-serif;
     font-size: 26px;
+    z-index: 1;
 }
+/*header {*/
+    /*position: fixed;*/
+    /*top:0;*/
+    /*background-color: teal;*/
+    /*height: 50px;*/
+    /*width: 100%;*/
+    /*z-index: 1;*/
+/*}*/
+
 
 nav .login {
 
@@ -23,6 +39,15 @@ nav .loggedin {
 
 }
 
+footer {
+    bottom: 0;
+    width: 100%;
+    background-color: #245780;
+    height: 30px;
+    position: fixed;
+
+
+}
 
 #inventorycontrols {
     display: none;
@@ -32,6 +57,7 @@ nav .loggedin {
     background-color: azure;
     top:130px;
     right: 0;
+    z-index: 1;
 }
 
 #addProduct {
@@ -42,21 +68,25 @@ nav .loggedin {
 
 #productSelection {
     top: 130px;
+    left: 25%;
     position: absolute;
 
     bottom: 0;
 
-    width: 690px;
-    min-width: 330px;
+    width: 800px;
+    /*min-width: 330px;*/
 
 
 }
 
+
+
 .productcontainer {
     /*how do i prevent opacity from being inheirted?*/
 
-    display: block;
+    display: inline-block;
     position: relative;
+
     height: 300px;
     width: 300px;
     background-color: azure;
@@ -66,6 +96,12 @@ nav .loggedin {
     padding: 2em;
     margin: 4em;
     box-shadow: 0 0 9px 5px rgba(0, 0, 0, 0.2);
+}
+
+.productcontainer img {
+
+    height: 250px;
+    width: auto;
 }
 
 .productcontainer .button {
@@ -115,34 +151,173 @@ nav .loggedin {
 
 #overlay {
     display: none;
-    position: absolute;
-
+    position: fixed;
+    top: 0;
+    left: 0;
+    color: #ff13fb;
     background-color: black;
     opacity: .9;
     height: 100%;
     width: 100%;
+    z-index: 1;
 
-
+}
+#overlay span {
+    font-size: 25px;
+    cursor: pointer;
 }
 
 #overlay img {
     margin-top: 10%;
 }
 
-#overlay p {
-    color: white;
+#overlay img.resize{
+    width: 400px;
+    height: auto;
 }
+
+/*#overlay p {*/
+    /*color: white;*/
+/*}*/
 
 #details {
     position: fixed;
     display: block;
     top: 35%;
-    transform: translateX(60%) translateY(-50%);
+    transform: translateX(60%);
 
     background-color: blanchedalmond;
     border-radius: 28px;
     border: solid gray 2px;
-    width: 250px;
-    height: 400px;
+    width: 400px;
+    height: 250px;
 }
 
+/*view edit cart*/
+
+#cart {
+    top: 50px;
+    bottom: 30px;
+    width: 100%;
+    background-color: lemonchiffon;
+
+}
+
+#details {
+    z-index: 1;
+    /*transform: translateX(80%);*/
+}
+
+
+
+#details img {
+    position: relative;
+    transform: translateX(-50%) translateY(-15%);
+}
+
+#details ul {
+    text-align: left;
+    z-index: 1;
+    position: absolute;
+    /*font-size: 24px;*/
+    top: 50px;
+    left: 40%;
+}
+
+#details button {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+#detail {
+    position: absolute;
+    background-color: beige;
+    color: darkgrey;
+    width: 70px;
+    height: 80px;
+    alignment: center;
+    z-index: 1;
+}
+
+#checkout {
+    z-index: 2;
+    top: 200px;
+    position: relative;
+    border: solid gray 1px;
+    background-color: whitesmoke;
+
+    /*font-size: 2em;*/
+
+}
+
+th, td {
+    padding: .5em;
+}
+
+.tabletotal {
+    text-align: right;
+    empty-cells: hide;
+}
+
+#checkout img {
+    height: 50px;
+    width: auto;
+}
+
+#table {
+    text-align: center;
+    display: block;
+    top: 200px;
+    left: 150px;
+    height: 500px;
+    width: 500px;
+    z-index: 1;
+}
+
+/*forms*/
+.error {
+            border: 2px solid red;
+            /*background-color: #ffcccc;*/
+        }
+
+#addAddressDiv {
+    display: block;
+}
+
+/*#addShippingAddressDiv {*/
+    /*display: none;*/
+/*}*/
+
+
+#checkoutContainer {
+    position: fixed;
+    background-color: #bcffe5;
+    border: groove 4px silver;
+    text-align: center;
+    margin: 10%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+}
+
+#checkoutContainer a {
+    background-color: #21f0ff;
+    border: 1px solid black;
+    border-radius: 18px 8px 0px 0px;
+
+
+    color: black;
+    margin: 1em;
+    padding: 1em;
+    text-decoration: none;
+
+}
+
+#checkoutContainer .view {
+    display: none;
+}
+
+#checkoutContainer div.selected {
+    display: block;
+}

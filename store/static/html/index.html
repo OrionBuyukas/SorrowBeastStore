@@ -6,33 +6,88 @@
     <link href="/css/style.css" rel="stylesheet" type="text/css">
 
 </head>
+
+<header>SorrowBeast</header>
 <script type="text/javascript" src="/js/script.js"></script>
-<body>
-<nav><s> SorrowBeast </s>
-    <button id="showInventoryControl" onclick="showInventoryControls()" class="button">Product Management</button>
+<nav id="nav"><s> SorrowBeast </s>
 
-<form id="file-form" action="photo_loader.html" method="POST">
-  <input type="file" id="file-select" name="photos[]" multiple/>
-  <button type="submit" id="upload-button">Upload</button>
-</form>
+        <button id="showInventoryControl" onclick="showInventoryControls()" class="button">Product Management</button>
 
 
 
 
-
-
+<div id="cartStatus"></div>
 </nav>
+<body id="body">
+
+<div id="table">
+<table id="checkout">
+</table>
+</div>
+
+<div id="createUser">
+<form id="registerUser">
+    <br>
+    Username:
+    <br>
+    <input type="text" name="username" id="username"  placeholder="Enter username"><label id="usernm"></label>
+    <br>
+    Password:
+    <br>
+    <input name="password" type="password" id="password" placeholder="Enter password"><label id="pass"></label>
+    <br>
+    Reenter Password:
+    <br>
+    <input name="password" type="password" id="reenterpassword" placeholder="Reenter password"><label id="repass"></label>
+    <br>
+    First Name:
+    <br>
+    <input type="text" name="first_name" placeholder="Enter first name"><label id="fnInvalid"></label>
+    <br>
+    Last Name:
+    <br>
+    <input type="text" name="last_name" placeholder="Enter last name"><label id="lnInvalid"></label>
+    <br>
+    Email:
+    <br>
+    <input type="email" name="email" placeholder="Enter email"><label id="emailInvalid"></label>
+    <br>
+    <input type="submit" id="submitUser">
+<!--<button name="createUser" id="createUserBtn" onclick="createUser()">Create User</button>-->
+
+    <input type="checkbox" id="TEST">TEST!
+</form>
+</div>
+
+<div id="addAddressDiv">
+    <label id="formTitle">Add Billing Address</label>
+    "street":
+        "city":
+    "state":
+    "zip":
+
+    Is would you like to have your package shipped to a different address?
+
+    <input type="checkbox" id="isShippingAddress" name="isShippingAddress" value="False" >//
+</div>
+
+
+<div id="addShippingAddressDiv">
+    <label>Add Shipping Address:</label>
+    "street":
+        "city":
+    "state":
+    "zip":
+    <input type="hidden" name="is_billing_address" value="False">
+    <input type="hidden" name="is_shipping_address" value="True">
+</div>
 
 
 
 
 
 <div id="productSelection">
-<div id="overlay"> </div>
-    <div id="details">
-        <ul id="productdetails"></ul>
-
-    </div>
+  <div id="container"></div>
 </div>
 
 
@@ -59,13 +114,67 @@
 
         <button id="addProductbtn" onclick="sendAddProduct()" value="SAVE">ADD Product</button>
 
-            <form method="POST" action="photo_loader.html" enctype="multipart/form-data">
-        <input type="file" name="file">
-        <input type="submit" value="submit">
+            <form method="POST"  id="photoForm" enctype="multipart/form-data">
+        <input type="file" id="photo" name="file">
+                <input type="hidden" name="productId" value="1">
+        <!--<input type="submit" id="photo-submit" value="photo-submit">-->
+        <button id="submitphoto" onclick="photoSubmitter()" value="SAVE">ADD Product</button>
     </form>
+
+         <!--<form method="POST" action="photo_loader.html" id="photoform" enctype="multipart/form-data">-->
+        <!--<input type="file" id="photo" name="file">-->
+                <!--<input type="hidden" name="productId" value="1">-->
+        <!--<input type="submit" id="photo-submit" value="photo-submit">-->
+    <!--</form>-->
+
+        <!--<form id="file-form" action="photo_loader.html" method="POST">-->
+  <!--<input type="file" id="file-select" name="photos[]" multiple/>-->
+  <!--<button type="submit" id="upload-button">Upload</button>-->
+</form>
+
+
     </div>
 </div>
 </body>
-
+<footer>&copy; Orion Buyukas 2015</footer>
 
 </html>
+
+<div id="checkoutContainer">
+    <a href="#view=login">
+        Login
+    </a>
+    <a href="#view=reviewCart">
+        Review Cart
+    </a>
+    <a href="#view=register">
+        Register
+    </a>
+    <a href="#view=addresses">
+        Addresses
+    </a>
+    <a href="#view=billing">
+        Billing
+    </a>
+    <a href="#view=finalize">
+        Finalize
+    </a>
+
+    <div id="login" class="view">
+        <input type="text" name="username">Username</input>
+        <input type="password" name="password" >Password</input>
+        <button name="login" id="loginUser" onclick="login()">Login</button>
+    </div>
+
+    <div id="reviewCart" class="view">
+        populate with cart view make cart view take an append table to element id location arguement.
+
+    </div>
+    <div id="addresses" class="view">
+    <div id="previousAddresses"></div>
+    </div>
+
+
+
+
+</div>
